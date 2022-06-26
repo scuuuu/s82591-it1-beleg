@@ -1,0 +1,77 @@
+/* CSS-Flexbox   */
+
+body {background-color: rgb(255, 255, 255); font-family: Work Sans;}
+header, footer {min-height: 5em; background: rgb(56,64,56);
+  background: linear-gradient(90deg, rgba(56,64,56,0.15592174369747902) 0%, rgba(70,67,184,0.702140231092437) 45%, rgba(169,0,255,1) 100%);}
+
+#text, #button {
+  text-align: center
+}
+
+
+.btn {
+  background-color: white;
+  color: black;
+  border: 2px solid #000000;
+  font-size: 15px;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+  display: inline;
+  width: 50%;
+  cursor: pointer;
+  
+}
+.btn:hover {
+  background-color: #cccccc;
+  color: rgb(0, 0, 0);
+}
+
+
+/* Rahmen + Abstände  */
+header, article, nav, aside, footer {
+margin: 0.25em;
+padding: 0.5em;
+border: 1px solid rgb(101, 101, 101);
+border-radius: 0.5em;
+}
+
+/* Fley-Container für Flex-Items: article, nav, aside  */
+main { 
+  background-color: rgb(255, 255, 255); 
+  display: flex;
+}
+
+/* Flex-Items mit flex-grow, flex-shrink, flex-basis */
+nav {
+  background: SkyBlue; 
+  order: 1; 
+  flex: 0 0 8em;
+  text-align: center;
+}
+
+article {
+  background: LightYellow; 
+  order: 2; 
+  flex: 3 3 0%;
+}
+
+aside {
+  background: yellowgreen; 
+  order: 3; flex: 1 1 0%;
+  
+}
+
+
+/* wenn Viewport kleiner als 600 Pixel -> eine Spalte, Reihenfolge  */ 
+@media screen and (max-width: 600px) {
+  main {
+    flex-direction: column;
+  }
+  /* Änderung der Reihenfolge für Kinder in Folge lt. html*/
+  main > * {
+    order: 0;
+  }
+
+
+}
+
